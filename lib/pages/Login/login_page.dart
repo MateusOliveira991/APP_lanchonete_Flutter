@@ -5,8 +5,15 @@ class LoginPage extends StatelessWidget {
 
  @override
 Widget build(BuildContext context) {
-  return const Center(
-    child: Text('Página de Login', style: TextStyle(fontSize: 26),),
+  return Scaffold(
+    body: Column(
+      children: [
+        Container(
+          child: Image.asset('assets/images/logo1.png'),
+        ),
+      ],
+      
+    ),
   );
 }
 
