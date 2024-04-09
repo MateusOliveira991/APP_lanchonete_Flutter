@@ -1,16 +1,10 @@
-# lanchonete
-
-A new Flutter project.
-
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Estou iniciando no Flutter e Dart a cerca de 2 meses e não podia deixar de testar meus conhecimentos nesse super APP para uma lanchonete fictícia.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# lanchonete
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/6c7ad0b5-5480-4a3b-98d0-aea241ca298d)
+
+
