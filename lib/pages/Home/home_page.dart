@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
-        title: const Text('Lanchonete'),
+        title: const Text('Cardápio'),
       )
     );
      
