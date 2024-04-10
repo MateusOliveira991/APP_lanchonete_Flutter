@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:lanchonete/core/app_colors.dart';
+// import 'package:flutter/widgets.dart';
+// import 'package:lanchonete/core/app_colors.dart';
 import 'package:lanchonete/core/app_textStyles.dart';
 
 class LoginPage extends StatelessWidget {
@@ -47,7 +47,14 @@ class LoginPage extends StatelessWidget {
               height: 18,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () { Navigator.pushNamed(context, '/home'); },
+
+          //onPressed sem botão de Voltar:
+          //     onPressed: () {
+          //   Navigator.of(context).pushReplacementNamed('/home');
+          // },
+
+          
               style: const ButtonStyle(
                 
               ),
