@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:lanchonete/core/app_colors.dart';
+import 'package:lanchonete/core/app_textStyles.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -27,6 +30,7 @@ class LoginPage extends StatelessWidget {
           child: Column(
             children: [
             Container(
+              
               child: Image.asset('assets/images/logo.png'),
               
             ),
@@ -34,18 +38,20 @@ class LoginPage extends StatelessWidget {
               decoration: const InputDecoration(
                 fillColor: Colors.white,
                 filled: true,
-                labelText: 'Usuário',
+                contentPadding: AppTextStyles.contentPadding,
+                labelText: 'Usuário',  labelStyle: AppTextStyles.labelTextBlack),
+
               ),
-            ),
+          
             const SizedBox(
-              height: 20,
+              height: 18,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Entrar'),
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 
               ),
+              child: const Text('Entrar', style: AppTextStyles.buttonTextBlack),
             ),
           ],
         ),
