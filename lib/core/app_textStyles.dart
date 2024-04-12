@@ -12,4 +12,7 @@ class AppTextStyles {
       TextStyle(color: Colors.black, fontWeight: FontWeight.bold);
   static const EdgeInsets contentPadding =
       EdgeInsets.symmetric(horizontal: 10, vertical: 4);
+
+      static const TextStyle textoGray =
+      TextStyle (color: Color(0xFFABABAB), fontSize: 18, fontWeight: FontWeight.bold);
 }

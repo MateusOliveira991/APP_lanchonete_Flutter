@@ -21,6 +21,8 @@ import 'package:lanchonete/pages/Login/login_page.dart';
         '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         }
+
+      // home: const HomePage(),
     );
   }
 
