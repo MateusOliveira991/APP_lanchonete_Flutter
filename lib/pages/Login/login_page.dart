@@ -42,6 +42,14 @@ class LoginPage extends StatelessWidget {
                 labelText: 'Usuário',  labelStyle: AppTextStyles.labelTextBlack),
 
               ),
+              TextFormField(
+              decoration: const InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: AppTextStyles.contentPadding,
+                labelText: 'Senha',  labelStyle: AppTextStyles.labelTextBlack),
+
+              ),
           
             const SizedBox(
               height: 18,
