@@ -7,7 +7,8 @@ Recentemente, decidi desafiar minhas habilidades de aprendizado construindo um a
 
 # Construção
 
-![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/13000a5e-a57d-493b-aedc-a1cc50838768)
+![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/7c143e9f-42ef-4298-918d-168044e8d99a)
+
 
 
 
