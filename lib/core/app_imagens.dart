@@ -8,4 +8,6 @@ class AppImages{
   static const String pagina5 = 'assets/images/porcao.png';
   static const String pagina6 = 'assets/images/bebida.png';
   static const String pagina7 = 'assets/images/vinho.png';
+  static const String pagina8 = 'assets/images/bacon.png';
+  static const String pagina9 = 'assets/images/egg.png';
 }
