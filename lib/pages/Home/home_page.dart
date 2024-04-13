@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          // Adicionando a imagem de fundo
+        
           Positioned.fill(
             child: Container(
               decoration: const BoxDecoration(
@@ -36,17 +36,17 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 mainAxisAlignment:
-                    MainAxisAlignment.center, // Alterado para 'center'
+                    MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                       height:
-                          100), // Adicionado para empurrar os botões para baixo
+                          100), 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
                         child: Container(
-                          height: 80, // Diminuído para 80
+                          height: 80, 
 
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                       const SizedBox(width: 20),
                       Expanded(
                         child: Container(
-                          height: 80, // Diminuído para 80
+                          height: 80, 
 
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(

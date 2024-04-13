@@ -26,7 +26,7 @@ class CardapioPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Cardápio',
-          style: AppTextStyles.labelTextBlack, // Aplicando o estilo ao título
+          style: AppTextStyles.labelTextBlack, // 
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),

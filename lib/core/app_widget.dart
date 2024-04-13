@@ -18,11 +18,11 @@ import 'package:lanchonete/pages/Login/login_page.dart';
         primaryColor: AppColors.primary,
         accentColor: AppColors.secondary,
       ),
-      initialRoute: '/cardapio', // Defina a rota inicial
+      initialRoute: '/cardapio', 
       routes: {
-        '/': (context) => const LoginPage(), // Rota para a página de login
-        '/home': (context) => const HomePage(), // Rota para a página inicial
-        '/cardapio': (context) => const CardapioPage(), // Rota para a página do cardápio
+        '/': (context) => const LoginPage(), 
+        '/home': (context) => const HomePage(), 
+        '/cardapio': (context) => const CardapioPage(), 
       },
     );
   }
