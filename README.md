@@ -6,8 +6,10 @@ Recentemente, decidi desafiar minhas habilidades de aprendizado construindo um a
 
 
 # Amostra
+![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/4a94941d-9b58-4ffe-8c56-9bcac2926dcb)
 
-![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/5ef92201-856b-43c8-a545-cfdeb68a2b96)
+
+
 
 
 
