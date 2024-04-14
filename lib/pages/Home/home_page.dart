@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lanchonete/core/app_colors.dart';
 import 'package:lanchonete/core/app_textStyles.dart';
 import 'package:lanchonete/pages/Cardapio/cardapio_page.dart';
+import 'package:lanchonete/pages/Reserva/reserva_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,7 +78,13 @@ class HomePage extends StatelessWidget {
                               side: const BorderSide(
                                   color: AppColors.primary, width: 2),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ReservaPage()),
+                              );
+                            },
                             child: const Text(
                               'Reserva de Mesa',
                               style: AppTextStyles.labelTextBlack,
