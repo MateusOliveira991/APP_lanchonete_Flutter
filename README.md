@@ -5,9 +5,10 @@ Comecei a aprender Flutter e Dart há cerca de dois meses, desde fevereiro de 20
 Recentemente, decidi desafiar minhas habilidades de aprendizado construindo um aplicativo em Flutter para uma lanchonete fictícia. Embora ainda não tenhamos abordado a montagem de telas no curso, estou animado com o progresso e o que tenho conseguido absorver até agora.
 
 
-# Construção
+# Amostra
 
-![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/7d952903-19cd-4d59-9da5-de57570a6440)
+![image](https://github.com/MateusOliveira991/APP_lanchonete_Flutter/assets/142065746/5ef92201-856b-43c8-a545-cfdeb68a2b96)
+
 
 
 
