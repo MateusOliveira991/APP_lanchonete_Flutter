@@ -12,8 +12,30 @@ class ReservaPage extends StatefulWidget {
 class _ReservaPageState extends State<ReservaPage> {
   int? _selectedTable;
   int _selectedPeople = 1;
-  DateTime _selectedDate = DateTime.now();
-  TimeOfDay _selectedTime = TimeOfDay.now();
+  DateTime? _selectedDate; // Alteração aqui
+  TimeOfDay? _selectedTime; // Alteração aqui
+  TextEditingController _dateTimeController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _updateDateTime();
+  }
+
+  @override
+  void dispose() {
+    _dateTimeController.dispose();
+    super.dispose();
+  }
+
+  void _updateDateTime() {
+    setState(() {
+      _dateTimeController.text =
+          _selectedDate != null && _selectedTime != null
+              ? 'Data e Hora: ${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year} ${_selectedTime!.hour}:${_selectedTime!.minute}'
+              : 'Selecione a data e hora';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +48,7 @@ class _ReservaPageState extends State<ReservaPage> {
         backgroundColor: Theme.of(context).primaryColor,
       ),
      
-    
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -36,7 +58,7 @@ class _ReservaPageState extends State<ReservaPage> {
               'Selecione a mesa:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 5),
             GridView.builder(
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -44,7 +66,7 @@ class _ReservaPageState extends State<ReservaPage> {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
               ),
-              itemCount: 10,
+              itemCount: 12,
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
@@ -57,7 +79,7 @@ class _ReservaPageState extends State<ReservaPage> {
                     decoration: BoxDecoration(
                       color: _selectedTable == index + 1
                           ? AppColors.primary
-                          : Colors.grey, // Cor da mesa selecionada
+                          : Colors.grey, 
                       borderRadius: BorderRadius.circular(8),
                     ),
                     alignment: Alignment.center,
@@ -96,47 +118,63 @@ class _ReservaPageState extends State<ReservaPage> {
             ),
             SizedBox(height: 20),
             Text(
-              'Selecione a data:',
+              'Selecione a data e hora:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () async {
-                final DateTime? pickedDate = await showDatePicker(
-                  context: context,
-                  initialDate: _selectedDate,
-                  firstDate: DateTime.now(),
-                  lastDate: DateTime.now().add(Duration(days: 365)),
-                );
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      final DateTime? pickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: _selectedDate ?? DateTime.now(),
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime.now().add(Duration(days: 365)),
+                      );
 
-                if (pickedDate != null && pickedDate != _selectedDate) {
-                  setState(() {
-                    _selectedDate = pickedDate;
-                  });
-                }
-              },
-              child: Text('Selecionar Data'),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Selecione a hora:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () async {
-                final TimeOfDay? pickedTime = await showTimePicker(
-                  context: context,
-                  initialTime: _selectedTime,
-                );
+                      if (pickedDate != null) {
+                        setState(() {
+                          _selectedDate = pickedDate;
+                          _updateDateTime();
+                        });
+                      }
+                    },
+                    child: Text('Selecionar Data'),
+                  ),
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      final TimeOfDay? pickedTime = await showTimePicker(
+                        context: context,
+                        initialTime: _selectedTime ?? TimeOfDay.now(),
+                      );
 
-                if (pickedTime != null && pickedTime != _selectedTime) {
-                  setState(() {
-                    _selectedTime = pickedTime;
-                  });
-                }
-              },
-              child: Text('Selecionar Hora'),
+                      if (pickedTime != null) {
+                        setState(() {
+                          _selectedTime = pickedTime;
+                          _updateDateTime();
+                        });
+                      }
+                    },
+                    child: Text('Selecionar Hora'),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 30),
+            TextFormField(
+              readOnly: true,
+              controller: _dateTimeController,
+              decoration: InputDecoration(
+                labelText: 'Data e Hora da reserva:',
+                border: OutlineInputBorder(),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+              ),
             ),
             SizedBox(height: 30),
             ElevatedButton(
@@ -150,10 +188,13 @@ class _ReservaPageState extends State<ReservaPage> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Mesa selecionada: ${_selectedTable ?? 'Nenhuma mesa selecionada'}'),
+                          Text(
+                              'Mesa selecionada: ${_selectedTable ?? 'Nenhuma mesa selecionada'}'),
                           Text('Número de pessoas: $_selectedPeople'),
-                          Text('Data da reserva: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}'),
-                          Text('Hora da reserva: ${_selectedTime.hour}:${_selectedTime.minute}'),
+                          Text(
+                              'Data da reserva: ${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'),
+                          Text(
+                              'Hora da reserva: ${_selectedTime!.hour}:${_selectedTime!.minute}'),
                         ],
                       ),
                       actions: [
@@ -168,7 +209,17 @@ class _ReservaPageState extends State<ReservaPage> {
                   },
                 );
               },
-              child: Text('Confirmar Reserva'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(AppColors.primary),
+                padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(horizontal: 50, vertical: 15)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8))),
+              ),
+              child: Text(
+                'Confirmar Reserva',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),

@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CardapioPage()),
+                                    builder: (context) => const CardapioPage()),
                               );
                             },
                             child: const Text(

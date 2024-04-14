@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primary,
       ),
-      home: CardapioPage(),
+      home: const CardapioPage(),
     );
   }
 }
@@ -24,7 +24,7 @@ class CardapioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Cardápio',
           style: AppTextStyles.labelTextBlack, // 
         ),

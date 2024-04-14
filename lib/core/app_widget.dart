@@ -19,7 +19,7 @@ import 'package:lanchonete/pages/Reserva/reserva_page.dart';
         primaryColor: AppColors.primary,
         accentColor: AppColors.secondary,
       ),
-      initialRoute: '/reserva', 
+      initialRoute: '/home', 
       routes: {
         '/': (context) => const LoginPage(), 
         '/home': (context) => const HomePage(), 
